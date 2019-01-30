@@ -38,7 +38,7 @@
 
 <body>
 
-<div id="app" class="container">
+<div id="app" class="container" @click="closePopup">
     <section>
         <div class="wrapper">
             <div class="ludvig-logo">
@@ -72,16 +72,21 @@
         </div>
     </section>
     <footer>
-        <div id="impressum" :class="{ show_me: showWindow }">
+        <div id="impressum" :class="{ show_me: showWindow }" class="mob">
             <p>BBC Baubetreuung GmbH</p>
             <p>Registergericht: Amtsgericht Straubing,<br> HRB 11714</p>
-            <p>Friedrich-Gottlieb-Klopstock-Straße 10,<br> 94315 Straubing, Deutschland</p><span id="close_impressum"
-                                                                                                 @click="showWindow=false"> </span>
+            <p>Friedrich-Gottlieb-Klopstock-Straße 10,<br> 94315 Straubing, Deutschland</p>
+            <span id="close_impressum" @click="showWindow=false"></span>
         </div>
         <div class="footer-item">&#169; 2019 BBC Baubetreuung GmbH</div>
         <div class="footer-item">
             <span id="impressum_btn" @click="showWindow=!showWindow">Impressum</span>
-
+            <div id="impressum" :class="{ show_me: showWindow }" class="desc">
+                <p>BBC Baubetreuung GmbH</p>
+                <p>Registergericht: Amtsgericht Straubing,<br> HRB 11714</p>
+                <p>Friedrich-Gottlieb-Klopstock-Straße 10,<br> 94315 Straubing, Deutschland</p>
+                <span id="close_impressum" @click="showWindow=false"></span>
+            </div>
         </div>
 
     </footer>
